@@ -1,0 +1,2 @@
+public class FairAndUnfairTest {
+}
