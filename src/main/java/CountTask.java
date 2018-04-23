@@ -32,17 +32,28 @@ public class CountTask extends RecursiveTask<Integer> {
 
             sum = leftResult + rightResult;
         }
+        if (this.isCompletedAbnormally())
+            System.out.println(this.getException());
         return sum;
     }
 
     public static void main(String[] args) {
+        long start = System.nanoTime();
         ForkJoinPool forkJoinPool = new ForkJoinPool();
         CountTask task = new CountTask(1, 4000);
         Future<Integer> result = forkJoinPool.submit(task);
         try {
             System.out.println(result.get());
+            System.out.println("cost:" + (System.nanoTime() - start));
         } catch (Exception e) {
 
         }
+        start = System.nanoTime();
+        int sum = 0;
+        for (int i = 0; i <= 4000; i++) {
+            sum += i;
+        }
+        System.out.println(sum);
+        System.out.println("cost:" + (System.nanoTime() - start));
     }
 }
