@@ -26,7 +26,7 @@ public class BinarySearch {
             int middle = (low + high) / 2;
             if (sortList.get(middle) == finder)
                 return middle;
-            if (sortList.get(middle) <= finder)
+            if (sortList.get(middle) < finder)
                 low = middle + 1;
             else
                 high = middle - 1;
