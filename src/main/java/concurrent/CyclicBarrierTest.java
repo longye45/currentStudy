@@ -1,13 +1,12 @@
-package Concurrent;
+package concurrent;
 
 import java.util.concurrent.CyclicBarrier;
 
-public class CyclicBarrierTest3 {
+public class CyclicBarrierTest {
+    static CyclicBarrier c = new CyclicBarrier(2);//屏障，等待俩个线程
+
     public static void main(String[] args) {
-
-        CyclicBarrier c = new CyclicBarrier(2);
-
-        Thread thread = new Thread(new Runnable() {
+        new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
@@ -15,14 +14,14 @@ public class CyclicBarrierTest3 {
                 } catch (Exception e) {
 
                 }
+                System.out.println(1);
             }
-        });
-        thread.start();
-        thread.interrupt();
+        }).start();
         try {
             c.await();
         } catch (Exception e) {
-            System.out.println(c.isBroken());
+
         }
+        System.out.println(2);
     }
 }

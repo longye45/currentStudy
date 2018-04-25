@@ -1,4 +1,4 @@
-package Concurrent;
+package concurrent;
 
 import java.util.concurrent.Delayed;
 import java.util.concurrent.FutureTask;

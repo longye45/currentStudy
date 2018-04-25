@@ -1,4 +1,4 @@
-package Concurrent;
+package concurrent;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

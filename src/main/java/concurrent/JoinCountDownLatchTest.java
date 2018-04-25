@@ -1,4 +1,4 @@
-package Concurrent;
+package concurrent;
 
 public class JoinCountDownLatchTest {
     public static void main(String[] args) throws Exception {

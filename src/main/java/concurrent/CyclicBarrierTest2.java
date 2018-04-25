@@ -1,9 +1,9 @@
-package Concurrent;
+package concurrent;
 
 import java.util.concurrent.CyclicBarrier;
 
-public class CyclicBarrierTest {
-    static CyclicBarrier c = new CyclicBarrier(2);//屏障，等待俩个线程
+public class CyclicBarrierTest2 {
+    static CyclicBarrier c = new CyclicBarrier(2, new A());
 
     public static void main(String[] args) {
         new Thread(new Runnable() {
@@ -23,5 +23,13 @@ public class CyclicBarrierTest {
 
         }
         System.out.println(2);
+    }
+
+    static class A implements Runnable {
+
+        @Override
+        public void run() {
+            System.out.println(3);
+        }
     }
 }

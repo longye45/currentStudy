@@ -1,4 +1,4 @@
-package Concurrent;
+package concurrent;
 
 import java.io.*;
 import java.net.ServerSocket;
