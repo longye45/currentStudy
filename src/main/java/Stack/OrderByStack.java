@@ -7,8 +7,6 @@ public class OrderByStack {
         Stack<Integer> newStack = new Stack<>();
         while (!old.isEmpty()) {
             int num = old.pop();
-            if (newStack.isEmpty())
-                newStack.push(num);
             while (!newStack.isEmpty() && newStack.peek() > num) {
                 old.push(newStack.pop());
             }
