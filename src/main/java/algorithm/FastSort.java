@@ -52,4 +52,4 @@ public class FastSort {
         //6, 对key右边的数快排  
         quickSort(a, i + 1, high);
     }
-}  
+}

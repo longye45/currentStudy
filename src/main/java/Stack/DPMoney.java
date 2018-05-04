@@ -28,7 +28,7 @@ public class DPMoney {
     }
 
     public static void main(String[] args) {
-        int[] arr = {1, 2, 5, 10};
-        System.out.println(minCoins(arr, 121));
+        int[] arr = {100, 2, 5, 10, 20};
+        System.out.println(minCoins(arr, 12106));
     }
 }

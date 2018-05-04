@@ -42,7 +42,7 @@ public class ArraySon {
     }
 
     public static void main(String[] args) {
-        int[] arr = new int[]{10, 2, 4, 3, 7, 6};
+        int[] arr = new int[]{10, 2, 14, 3, 7, 6};
         System.out.println(getNum(arr, 3));
     }
 }
