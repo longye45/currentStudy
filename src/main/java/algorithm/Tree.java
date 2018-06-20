@@ -1,6 +1,6 @@
 package algorithm;
 
-import java.util.Stack;
+import java.util.*;
 
 public class Tree {
     static class Node {
@@ -50,6 +50,26 @@ public class Tree {
         }
     }
 
+    public static ArrayList<Integer> PrintFromTopToBottom(Node root) {
+        Queue<Node> queue = new LinkedList<>();
+        ArrayList<Integer> ret = new ArrayList<>();
+        queue.add(root);
+        if (root == null)
+            return ret;
+        while (!queue.isEmpty()){
+            int cnt = queue.size();
+            while (--cnt >= 0){
+                Node t = queue.poll();
+                if (t.left != null)
+                    queue.add(t.left);
+                if (t.right != null)
+                    queue.add(t.right);
+                ret.add(t.value);
+            }
+        }
+        return ret;
+    }
+
     public static void main(String[] args) {
         Node head = new Node(1);
         head.left = new Node(2);
@@ -57,6 +77,10 @@ public class Tree {
         head.left.left = new Node(4);
         head.left.right = new Node(5);
         head.left.right.right = new Node(6);
-        getAllNodes(head);
+        List<Integer> list = PrintFromTopToBottom(head);
+        for (Integer a :
+                list) {
+            System.out.println(a);
+        }
     }
 }
